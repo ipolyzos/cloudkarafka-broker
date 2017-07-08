@@ -1,0 +1,13 @@
+---
+applications:
+- name: cloudkarafka-broker
+  memory: 1G
+  instances: 1
+  path: target/cloudkarafka-broker-0.0.1-SNAPSHOT.jar
+  random-route: false
+  services:
+    - ckrfka-mongodb
+  env:
+      CLOUDKARAFKA_API_URL: "https://customer.cloudkarafka.com/api"
+      CLOUDKARAFKA_API_KEY: "xxxx-xxxx-xxxx-xxxx-xxxx"
+      CLOUDKARAFKA_REGION: "amazon-web-services::us-east-1"
